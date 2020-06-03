@@ -20,6 +20,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 2 }}
+      />
     </div>
   );
 }
