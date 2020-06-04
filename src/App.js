@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import name from './Name.gif'
 import { motion } from "framer-motion"
+import Typist from 'react-typist';
 import {useSpring, animated} from 'react-spring'
 
 // Styled-components lets you write actual CSS in your JavaScript
@@ -44,12 +45,6 @@ Button.defaultProps = {
 }
 
 
-// Define what props.theme will look like
-//const theme = {
-//  main: "mediumseagreen"
-//};
-
-
 const Container = styled.div`
   text-align: center;
   text-center: center;
@@ -67,7 +62,7 @@ function App() {
   const props = useSpring({opacity: 1, from: {opacity: 0}})
   //const props2 = useSpring({ value: 100, from: { value: 0 } })
   
-
+  // Defining a theme for Styled components, Random every request.
   const theme = {
     main: themes[getRandomInt(themes.length)]
   }
@@ -78,6 +73,9 @@ function App() {
         <ThemeProvider theme={theme}>
           <Container>
             <img src={name} alt="Welcome" height="20px"/>
+            <Typist>
+              Welcome :)
+            </Typist>
             <Button href=""> Projects </Button>
             <Button href=""> Articles </Button>
             <Button href=""> About </Button>
