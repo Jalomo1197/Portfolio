@@ -22,6 +22,9 @@ const Button = styled.button`
   color: ${props => props.theme.main};
   border: 2px solid ${props => props.theme.main};
 
+  ${Button}:hover & {
+    margin: 0 4em;
+  }
  /* ${props =>
     props.primary &&
     css`
