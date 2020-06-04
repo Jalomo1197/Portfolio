@@ -74,6 +74,7 @@ function App() {
           <Container>
             <img src={name} alt="Welcome" height="20px"/>
             <Typist>
+              <Typist.Delay ms={200} />
               Welcome :)
             </Typist>
             <Button href=""> Projects </Button>
@@ -83,6 +84,10 @@ function App() {
           </Container>
         </ThemeProvider>
       </animated.div>
+      <Typist>
+              <Typist.Delay ms={200} />
+              Welcome :)
+      </Typist>
     </div>
   );
 }
