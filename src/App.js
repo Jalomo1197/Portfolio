@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import name from './Name.gif'
 import { motion } from "framer-motion"
 import {useSpring, animated} from 'react-spring'
-import styled from 'styled-components'
+
+// Styled-components lets you write actual CSS in your JavaScript
+import styled, { css } from 'styled-components'
+
 import './App.css';
 
 
@@ -14,6 +17,17 @@ const Button = styled.button`
   color: palevioletred;
   margin: 0 1em;
   padding: 0.25em 1em;
+
+  ${props =>
+    props.primary &&
+    css`
+      background: palevioletred;
+      color: white;
+    `};
+`
+
+const Container = styled.div`
+  text-align: center;
 `
 
 
@@ -37,7 +51,12 @@ function App() {
         </div>
       </div>
       <animated.div style={props}> I will FADE </animated.div>
-      <Button> Projects </Button>
+      <Container>
+        <Button> Projects </Button>
+        <Button> Articles </Button>
+        <Button> About </Button>
+        <Button primary> Contact </Button>
+      </Container>
     </div>
   );
 }
