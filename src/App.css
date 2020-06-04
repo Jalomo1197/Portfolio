@@ -41,3 +41,12 @@ body {
   background-size: cover;
   background-image: './RedShoes.jpeg'
 }
+
+header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+}
