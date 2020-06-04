@@ -6,7 +6,7 @@ import {useSpring, animated} from 'react-spring'
 import './App.css';
 
 function App() {
-  const props = useSpring({opacity: 1, from: {opacity: 0}})
+  const props = useSpring({opacity: 0.5, from: {opacity: 0}})
 
   return (
     <div className="App">
