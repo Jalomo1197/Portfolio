@@ -16,16 +16,18 @@ const Button = styled.button`
   background: transparent;
   border-radius: 3px;
   margin: 0 1em;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0.25em 1em;
 
   /* Color the border and text with theme.main */
   color: ${props => props.theme.main};
   border: 2px solid ${props => props.theme.main};
 
+  transition: 0.5s all ease-out;
+
   &:hover {
     background: ${props => props.theme.main} solid;
-    border: 4px solid ${props => props.theme.main};
+    border: 3px solid ${props => props.theme.main};
     color: white;
   }
  /* ${props =>
@@ -54,7 +56,7 @@ Button.defaultProps = {
 const Container = styled.div`
   text-align: center;
   background: black;
-  height: 30px;
+  height: 40px;
 `
 
 
@@ -85,15 +87,16 @@ function App() {
           <a href="" className="item">About</a>
         </div>
       </div>
-      <animated.div style={props}> I will FADE </animated.div>
-      <ThemeProvider theme={theme}>
-        <Container>
-          <Button href=""> Projects </Button>
-          <Button href=""> Articles </Button>
-          <Button href=""> About </Button>
-          <Button href=""> Contact </Button>
-        </Container>
-      </ThemeProvider>
+      <animated.div style={props}>
+        <ThemeProvider theme={theme}>
+          <Container>
+            <Button href=""> Projects </Button>
+            <Button href=""> Articles </Button>
+            <Button href=""> About </Button>
+            <Button href=""> Contact </Button>
+          </Container>
+        </ThemeProvider>
+      </animated.div>
     </div>
   );
 }
