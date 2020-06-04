@@ -13,10 +13,12 @@ import './App.css';
 const Button = styled.button`
   background: transparent;
   border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
   margin: 0 1em;
   padding: 0.25em 1em;
+
+  /* Color the border and text with theme.main */
+  color: ${props => props.theme.main};
+  border: 2px solid ${props => props.theme.main};
 
   ${props =>
     props.primary &&
@@ -25,6 +27,21 @@ const Button = styled.button`
       color: white;
     `};
 `
+
+
+// We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
+Button.defaultProps = {
+  theme: {
+    main: "palevioletred"
+  }
+}
+
+
+// Define what props.theme will look like
+const theme = {
+  main: "mediumseagreen"
+};
+
 
 const Container = styled.div`
   text-align: center;
@@ -51,12 +68,15 @@ function App() {
         </div>
       </div>
       <animated.div style={props}> I will FADE </animated.div>
-      <Container>
-        <Button> Projects </Button>
-        <Button> Articles </Button>
-        <Button> About </Button>
-        <Button primary> Contact </Button>
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Container>
+
+          <Button> Projects </Button>
+          <Button> Articles </Button>
+          <Button> About </Button>
+          <Button primary> Contact </Button>
+        </Container>
+      </ThemeProvider>
     </div>
   );
 }
