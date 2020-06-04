@@ -54,11 +54,12 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+const AnimatedButton = styled(Button)
 
 function App() {
   const props = useSpring({opacity: 0.5, from: {opacity: 0}})
   //const props2 = useSpring({ value: 100, from: { value: 0 } })
-  const AnimatedButton = styled(Button)
+  
 
   const theme = {
     main: themes[getRandomInt(themes.length)]
