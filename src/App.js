@@ -24,7 +24,7 @@ const Button = styled.button`
   border: 2px solid ${props => props.theme.main};
 
   &:hover {
-    background: ${props => props.theme.main};
+    background: ${props => props.theme.main} solid;
     border: 4px solid ${props => props.theme.main};
     color: white;
   }
@@ -54,6 +54,7 @@ Button.defaultProps = {
 const Container = styled.div`
   text-align: center;
   background: black;
+  height: 30px;
 `
 
 
