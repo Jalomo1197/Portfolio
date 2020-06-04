@@ -56,6 +56,7 @@ Button.defaultProps = {
 
 const Container = styled.div`
   text-align: center;
+  text-center: center;
   background: black;
   height: 40px;
 `
