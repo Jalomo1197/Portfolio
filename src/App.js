@@ -15,12 +15,12 @@ function App() {
         <img src={name} className="logo" alt="Logo Image" />
       
         <div className="navigation-sub">
-        <animated.div style={props}> I will FADE </animated.div>
           <a href="" className="item">Projects</a>
           <a href="" className="item">Articles</a>
           <a href="" className="item">About</a>
         </div>
       </div>
+      <animated.div style={props}> I will FADE </animated.div>
     </div>
   );
 }
