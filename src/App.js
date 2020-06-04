@@ -72,9 +72,8 @@ function App() {
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
-            <img src={name} alt="Welcome" height="20px"/>
-            <Typist>
-              <Typist.Delay ms={200} />
+            <Typist style="color: white; "  avgTypingDelay="90" >
+              <Typist.Delay ms={500} />
               Welcome :)
             </Typist>
             <Button href=""> Projects </Button>
@@ -84,10 +83,6 @@ function App() {
           </Container>
         </ThemeProvider>
       </animated.div>
-      <Typist>
-              <Typist.Delay ms={200} />
-              Welcome :)
-      </Typist>
     </div>
   );
 }
