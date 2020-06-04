@@ -80,7 +80,6 @@ function App() {
       <animated.div style={props}> I will FADE </animated.div>
       <ThemeProvider theme={theme}>
         <Container>
-          <AnimatedButton style={props}>Projects</AnimatedButton>
           <Button href=""> Projects </Button>
           <Button href=""> Articles </Button>
           <Button href=""> About </Button>
