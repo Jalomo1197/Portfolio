@@ -17,7 +17,7 @@ function App() {
       
         <img src={name} className="logo" alt="Logo Image" />
       
-        <AnimatedDonut percent={props.value} />
+        <AnimatedDonut percent={props2.value} />
         <div className="navigation-sub">
           <a href="" className="item">Projects</a>
           <a href="" className="item">Articles</a>
