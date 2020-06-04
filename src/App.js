@@ -29,6 +29,7 @@ const Button = styled.button`
     background: ${props => props.theme.main} solid;
     border: 3px solid ${props => props.theme.main};
     color: white;
+    box-shadow: 0 12px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1)
   }
  /* ${props =>
     props.primary &&
