@@ -16,6 +16,7 @@ const Button = styled.button`
   background: transparent;
   border-radius: 3px;
   margin: 0 1em;
+  font-size: 16px;
   padding: 0.25em 1em;
 
   /* Color the border and text with theme.main */
@@ -23,7 +24,9 @@ const Button = styled.button`
   border: 2px solid ${props => props.theme.main};
 
   &:hover {
-    background-color: props.theme.main;
+    background: solid
+    background-color: ${props.theme.main};
+    border: 4px solid ${props => props.theme.main};
     color: white;
   }
  /* ${props =>
