@@ -7,6 +7,9 @@ import './App.css';
 
 function App() {
   const props = useSpring({opacity: 0.5, from: {opacity: 0}})
+  const props2 = useSpring({ value: 100, from: { value: 0 } })
+  const AnimatedDonut = animated(<img src={name} className="logo" alt="Logo Image" />)
+
 
   return (
     <div className="App">
@@ -14,6 +17,7 @@ function App() {
       
         <img src={name} className="logo" alt="Logo Image" />
       
+        <AnimatedDonut percent={props.value} />
         <div className="navigation-sub">
           <a href="" className="item">Projects</a>
           <a href="" className="item">Articles</a>
