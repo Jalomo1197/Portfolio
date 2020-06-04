@@ -25,7 +25,7 @@ const Button = styled.button`
   ${props =>
     props.primary &&
     css`
-      background: palevioletred;
+      background: props.theme.main;
       color: white;
     `};
 `
@@ -58,7 +58,7 @@ function getRandomInt(max) {
 function App() {
   const props = useSpring({opacity: 0.5, from: {opacity: 0}})
   //const props2 = useSpring({ value: 100, from: { value: 0 } })
-  //const AnimatedDonut = animated(<img src={name} className="logo" alt="Logo Image" />)
+  const AnimatedButton = styled(Button)
 
   const theme = {
     main: themes[getRandomInt(themes.length)]
@@ -79,11 +79,11 @@ function App() {
       <animated.div style={props}> I will FADE </animated.div>
       <ThemeProvider theme={theme}>
         <Container>
-
-          <Button> Projects </Button>
-          <Button> Articles </Button>
-          <Button> About </Button>
-          <Button primary> Contact </Button>
+          <AnimatedButton style={props}>Projects</AnimatedButton>
+          <Button href=""> Projects </Button>
+          <Button href=""> Articles </Button>
+          <Button href=""> About </Button>
+          <Button primary href=""> Contact </Button>
         </Container>
       </ThemeProvider>
     </div>
