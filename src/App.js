@@ -77,7 +77,7 @@ function App() {
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
-            <img src={name} alt="Welcome" height="40px"/>
+            <img src={name} alt="Welcome" height="20px"/>
             <Button href=""> Projects </Button>
             <Button href=""> Articles </Button>
             <Button href=""> About </Button>
