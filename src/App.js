@@ -11,10 +11,11 @@ function App() {
   return (
     <div className="App">
       <div className="navigation">
-      <animated.div style={props}>
+      
         <img src={name} className="logo" alt="Logo Image" />
-        </animated.div>
+      
         <div className="navigation-sub">
+        <animated.div style={props}> I will FADE </animated.div>
           <a href="" className="item">Projects</a>
           <a href="" className="item">Articles</a>
           <a href="" className="item">About</a>
