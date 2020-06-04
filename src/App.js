@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import {useSpring, animated} from 'react-spring'
 
 // Styled-components lets you write actual CSS in your JavaScript
-import styled, { css } from 'styled-components'
+import styled, { css, ThemeProvider } from 'styled-components'
 
 import './App.css';
 
