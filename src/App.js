@@ -10,6 +10,8 @@ import styled, { css, ThemeProvider } from 'styled-components'
 import './App.css';
 
 
+var themes = ["palevioletred", "mediumseagreen", "midnightblue", "slateblue", "deepskyblue"]
+
 const Button = styled.button`
   background: transparent;
   border-radius: 3px;
@@ -38,9 +40,9 @@ Button.defaultProps = {
 
 
 // Define what props.theme will look like
-const theme = {
-  main: "mediumseagreen"
-};
+//const theme = {
+//  main: "mediumseagreen"
+//};
 
 
 const Container = styled.div`
@@ -48,12 +50,19 @@ const Container = styled.div`
 `
 
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 
 function App() {
   const props = useSpring({opacity: 0.5, from: {opacity: 0}})
-  const props2 = useSpring({ value: 100, from: { value: 0 } })
-  const AnimatedDonut = animated(<img src={name} className="logo" alt="Logo Image" />)
+  //const props2 = useSpring({ value: 100, from: { value: 0 } })
+  //const AnimatedDonut = animated(<img src={name} className="logo" alt="Logo Image" />)
 
+  const theme = {
+    main: themes[getRandomInt(themes.length)]
+  }
 
   return (
     <div className="App">
