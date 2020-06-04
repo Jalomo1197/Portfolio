@@ -10,7 +10,7 @@ import styled, { css, ThemeProvider } from 'styled-components'
 import './App.css';
 
 
-var themes = ["palevioletred", "mediumseagreen", "midnightblue", "slateblue", "deepskyblue"]
+var themes = ["palevioletred", "mediumseagreen", "violet", "slateblue", "deepskyblue", "paleturquoise", "silver", "navajowhite"]
 
 const Button = styled.button`
   background: transparent;
@@ -22,8 +22,9 @@ const Button = styled.button`
   color: ${props => props.theme.main};
   border: 2px solid ${props => props.theme.main};
 
-  ${Button}:hover & {
-    margin: 0 4em;
+  &:hover {
+    background-color: props.theme.main;
+    color: white;
   }
  /* ${props =>
     props.primary &&
