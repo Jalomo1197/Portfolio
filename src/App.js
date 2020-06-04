@@ -11,7 +11,12 @@ import styled, { css, ThemeProvider } from 'styled-components'
 import './App.css';
 
 
-var themes = ["palevioletred", "mediumseagreen", "violet", "slateblue", "deepskyblue", "paleturquoise", "silver", "navajowhite"]
+const themes = ["palevioletred", "mediumseagreen", "violet", "slateblue", "deepskyblue", "paleturquoise", "silver", "navajowhite"]
+
+const LiveTextStyle = {
+  color: "white",
+  font: "Lucida Console"
+}
 
 const Button = styled.button`
   background: transparent;
@@ -72,7 +77,7 @@ function App() {
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
-            <Typist style="color: white; "  avgTypingDelay="90" >
+            <Typist style={LiveTextStyle}  avgTypingDelay="90" >
               <Typist.Delay ms={500} />
               Welcome :)
             </Typist>
