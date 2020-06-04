@@ -64,10 +64,9 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-const AnimatedButton = styled(Button)
 
 function App() {
-  const props = useSpring({opacity: 0.5, from: {opacity: 0}})
+  const props = useSpring({opacity: 1, from: {opacity: 0}})
   //const props2 = useSpring({ value: 100, from: { value: 0 } })
   
 
@@ -77,16 +76,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className="navigation">
-      
-        <img src={name} className="logo" alt="Logo Image" />
-    
-        <div className="navigation-sub">
-          <a href="" className="item">Projects</a>
-          <a href="" className="item">Articles</a>
-          <a href="" className="item">About</a>
-        </div>
-      </div>
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
