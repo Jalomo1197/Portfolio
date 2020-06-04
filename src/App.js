@@ -18,6 +18,7 @@ const Button = styled.button`
   margin: 0 1em;
   font-size: 18px;
   padding: 0.25em 1em;
+  cursor: pointer;
 
   /* Color the border and text with theme.main */
   color: ${props => props.theme.main};
@@ -32,12 +33,6 @@ const Button = styled.button`
     color: white;
     box-shadow: 0 12px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
   }
- /* ${props =>
-    props.primary &&
-    css`
-      background: props.theme.main;
-      color: white;
-    `};*/
 `
 
 
@@ -82,6 +77,7 @@ function App() {
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
+            <img src={name} alt="Welcome" height="40px"/>
             <Button href=""> Projects </Button>
             <Button href=""> Articles </Button>
             <Button href=""> About </Button>
