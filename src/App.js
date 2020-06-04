@@ -26,10 +26,11 @@ const Button = styled.button`
   transition: 0.5s all ease-out;
 
   &:hover {
-    background: ${props => props.theme.main} solid;
+    background: solid;
+    background-color: ${props => props.theme.main};
     border: 3px solid ${props => props.theme.main};
     color: white;
-    box-shadow: 0 12px 16px 0 rgba(192,192,192,0.4), 0 17px 50px 0 rgba(192,192,192,0.1);
+    box-shadow: 0 12px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
   }
  /* ${props =>
     props.primary &&
@@ -58,7 +59,7 @@ const Container = styled.div`
   text-align: center;
   text-center: center;
   background: black;
-  height: 40px;
+  height: 45px;
 `
 
 
