@@ -22,12 +22,12 @@ const Button = styled.button`
   color: ${props => props.theme.main};
   border: 2px solid ${props => props.theme.main};
 
-  ${props =>
+ /* ${props =>
     props.primary &&
     css`
       background: props.theme.main;
       color: white;
-    `};
+    `};*/
 `
 
 
@@ -47,6 +47,7 @@ Button.defaultProps = {
 
 const Container = styled.div`
   text-align: center;
+  background: black;
 `
 
 
@@ -83,7 +84,7 @@ function App() {
           <Button href=""> Projects </Button>
           <Button href=""> Articles </Button>
           <Button href=""> About </Button>
-          <Button primary href=""> Contact </Button>
+          <Button href=""> Contact </Button>
         </Container>
       </ThemeProvider>
     </div>
