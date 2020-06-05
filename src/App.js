@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import name from './Name.gif'
 import { motion } from "framer-motion"
-import Typist from 'react-typist';
+import Typist, {Cursor} from 'react-typist';
 import {useSpring, animated} from 'react-spring'
 
 // Styled-components lets you write actual CSS in your JavaScript
@@ -83,15 +83,9 @@ function App() {
             <Button href=""> About </Button>
             <Button href=""> Contact </Button>
           </Container>
-          <Typist avgTypingDelay="45" cursor={{
-            show: true,
-            blink: true,
-            element: '|',
-            hideWhenDone: false,
-            hideWhenDoneDelay: 1000,
-          }}>
+          <Typist avgTypingDelay="45">
               <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> Welcome :) </p>
-              
+              <Cursor/>
           </Typist>
         </ThemeProvider>
       </animated.div>
