@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import name from './Name.gif'
 import { motion } from "framer-motion"
-import Typist, {Cursor} from 'react-typist';
+import Typist from 'react-typist';
+import './type.scss'
 import {useSpring, animated} from 'react-spring'
 
 // Styled-components lets you write actual CSS in your JavaScript
@@ -74,7 +75,6 @@ function App() {
 
   return (
     <div className="App" style= {{backgroundColor: 'black', height: '100%',}}>
-      
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
@@ -85,10 +85,20 @@ function App() {
           </Container>
           <Typist avgTypingDelay="45">
               <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> Welcome :) </p>
-              <Cursor/>
           </Typist>
         </ThemeProvider>
       </animated.div>
+
+      
+        <Typist
+          className="TypistExample-header"
+          avgTypingDelay={40}
+          startDelay={2000}
+          onTypingDone={this.onHeaderTyped}
+        >
+          <p>React Typist</p>
+        </Typist>
+      
     </div>
   );
 }
