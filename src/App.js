@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import name from './Name.gif'
-import { motion } from "framer-motion"
+//import logo from './logo.svg';
+//import name from './Name.gif'
+//import { motion } from "framer-motion"
 import Typist from 'react-typist';
 import './type.scss'
 import {useSpring, animated} from 'react-spring'
 
 // Styled-components lets you write actual CSS in your JavaScript
-import styled, { css, ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import './App.css';
 
@@ -75,6 +75,8 @@ function getRandomInt(max) {
           <p>React Typist</p>
         </Typist>
       </div>
+
+      <-- <span className="Cursor Cursor--blinking">|</span> !-->
 */
 
 function App() {
@@ -97,7 +99,6 @@ function App() {
             <Button href=""> Contact </Button>
           </Container>
           <div className="TypistExample">
-            <div className="TypistExample-header">
               <Typist className="TypistExample-header"
                       avgTypingDelay={40}
                       startDelay={2000}
@@ -106,10 +107,8 @@ function App() {
                   <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> 
                     Welcome :)
                   </p>
-                  <span class="Cursor Cursor--blinking">|</span>
+                    
               </Typist>
-              <span class="Cursor Cursor--blinking">|</span>
-            </div>
           </div>
         </ThemeProvider>
       </animated.div>
