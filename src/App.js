@@ -53,7 +53,7 @@ Button.defaultProps = {
 const Container = styled.div`
   text-align: center;
   text-center: center;
-  background: black;
+  background: white;
   height: 45px;
 `
 
@@ -77,7 +77,7 @@ function App() {
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
-            <Typist style={LiveTextStyle}  avgTypingDelay="90" >
+            <Typist style={LiveTextStyle}  avgTypingDelay="70" >
               <Typist.Delay ms={500} />
               Welcome :)
             </Typist>
