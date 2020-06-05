@@ -82,9 +82,8 @@ function App() {
             <Button href=""> About </Button>
             <Button href=""> Contact </Button>
           </Container>
-          <Typist style={{color: theme.main}}  avgTypingDelay="70" >
-              <Typist.Delay ms={500} />
-              <p style={{color: theme.main}}> Welcome :) </p>
+          <Typist avgTypingDelay="65" >
+              <p style={{color: theme.main, font: "Lucida Console"}}> Welcome :) </p>
           </Typist>
         </ThemeProvider>
       </animated.div>
