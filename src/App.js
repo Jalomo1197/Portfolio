@@ -84,7 +84,7 @@ function App() {
           </Container>
           <Typist style={{color: theme.main}}  avgTypingDelay="70" >
               <Typist.Delay ms={500} />
-              Welcome :)
+              <p style={{color: theme.main}}> Welcome :) </p>
           </Typist>
         </ThemeProvider>
       </animated.div>
