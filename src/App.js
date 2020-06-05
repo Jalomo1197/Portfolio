@@ -54,7 +54,6 @@ Button.defaultProps = {
 const Container = styled.div`
   text-align: center;
   text-center: center;
-  background: black;
   height: 60px;
 `
 
@@ -77,6 +76,22 @@ function getRandomInt(max) {
       </div>
 
       <-- <span className="Cursor Cursor--blinking">|</span> !-->
+
+
+
+
+      <div className="TypistExample">
+              <Typist className="TypistExample-header"
+                      avgTypingDelay={40}
+                      startDelay={2000}
+                      onTypingDone={this.onHeaderTyped} 
+              >
+                  <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> 
+                    Welcome :)
+                  </p>
+                  <element class="Cursor--blinking">|</element>
+              </Typist>
+          </div>
 */
 
 function App() {
@@ -88,30 +103,47 @@ function App() {
     main: themes[getRandomInt(themes.length)]
   }
 
+
   return (
-    <div className="App" style= {{backgroundColor: 'black', height: '100%',}}>
+    <div className="App">
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
+            <img src="./Ball.gif" alt="ball"/>
             <Button href=""> Projects </Button>
+            <img src="./Ball.gif" alt="ball"/>
             <Button href=""> Articles </Button>
+            <img src="./Ball.gif" alt="ball"/>
             <Button href=""> About </Button>
+            <img src="./Ball.gif" alt="ball"/>
             <Button href=""> Contact </Button>
+            <img src="./Ball.gif" alt="ball"/>
           </Container>
-          <div className="TypistExample">
-              <Typist className="TypistExample-header"
-                      avgTypingDelay={40}
-                      startDelay={2000}
-                      onTypingDone={this.onHeaderTyped} 
-              >
-                  <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> 
-                    Welcome :)
-                  </p>
-                    
-              </Typist>
-          </div>
+        
         </ThemeProvider>
       </animated.div>
+
+
+
+      <div>
+              <Typist
+                      cursor={{color:theme.main }}
+                      avgTypingDelay={40}
+                      startDelay={2000}
+              >
+                  <h1 style={{color: theme.main, font:'Lucida Console', width:'1000px', display:'inline'}}> 
+                    <br></br>
+                    
+                    Alexis Leonardo Jalomo
+                    <br></br>
+                    Welcome to my portfolio :)
+                  </h1>
+                  
+    
+                 
+              </Typist>
+      </div>
+
     </div>
   );
 }

@@ -44,7 +44,9 @@ $bl-color: #22BAD9;
 
   .Typist .Cursor {
     display: inline-block;
-  
+    color: white;
+    font-size: 3em;
+    
     &--blinking {
       opacity: 1;
       animation: blink 1s linear infinite;
