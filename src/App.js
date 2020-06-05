@@ -53,8 +53,8 @@ Button.defaultProps = {
 const Container = styled.div`
   text-align: center;
   text-center: center;
-  background: white;
-  height: 45px;
+  background: black;
+  height: 50px;
 `
 
 
@@ -73,7 +73,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style= {{backgroundColor: "gray", color: "black"}}>
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
