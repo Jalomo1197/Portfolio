@@ -88,17 +88,6 @@ function App() {
           </Typist>
         </ThemeProvider>
       </animated.div>
-
-      
-        <Typist
-          className="TypistExample-header"
-          avgTypingDelay={40}
-          startDelay={2000}
-          onTypingDone={this.onHeaderTyped}
-        >
-          <p>React Typist</p>
-        </Typist>
-      
     </div>
   );
 }
