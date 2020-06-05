@@ -82,7 +82,7 @@ function App() {
             <Button href=""> About </Button>
             <Button href=""> Contact </Button>
           </Container>
-          <Typist avgTypingDelay="65" >
+          <Typist avgTypingDelay="45" >
               <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> Welcome :) </p>
           </Typist>
         </ThemeProvider>
