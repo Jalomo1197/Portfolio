@@ -74,6 +74,7 @@ function App() {
 
   return (
     <div className="App" style= {{backgroundColor: 'black', height: '100%',}}>
+      
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
@@ -82,8 +83,15 @@ function App() {
             <Button href=""> About </Button>
             <Button href=""> Contact </Button>
           </Container>
-          <Typist avgTypingDelay="45" >
+          <Typist avgTypingDelay="45" cursor={{
+            show: true,
+            blink: true,
+            element: '|',
+            hideWhenDone: false,
+            hideWhenDoneDelay: 1000,
+          }}>
               <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> Welcome :) </p>
+              
           </Typist>
         </ThemeProvider>
       </animated.div>
