@@ -54,7 +54,7 @@ const Container = styled.div`
   text-align: center;
   text-center: center;
   background: black;
-  height: 50px;
+  height: 60px;
 `
 
 
@@ -73,19 +73,19 @@ function App() {
   }
 
   return (
-    <div className="App" style= {{backgroundColor: "gray", color: "black"}}>
+    <div className="App" style= {{backgroundColor: 'gray', color: 'black'}}>
       <animated.div style={props}>
         <ThemeProvider theme={theme}>
           <Container>
-            <Typist style={LiveTextStyle}  avgTypingDelay="70" >
-              <Typist.Delay ms={500} />
-              Welcome :)
-            </Typist>
             <Button href=""> Projects </Button>
             <Button href=""> Articles </Button>
             <Button href=""> About </Button>
             <Button href=""> Contact </Button>
           </Container>
+          <Typist style={{color: theme.main}}  avgTypingDelay="70" >
+              <Typist.Delay ms={500} />
+              Welcome :)
+          </Typist>
         </ThemeProvider>
       </animated.div>
     </div>
