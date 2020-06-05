@@ -64,6 +64,19 @@ function getRandomInt(max) {
 }
 
 
+/*
+<div className="TypistExample">
+        <Typist
+          className="TypistExample-header"
+          avgTypingDelay={40}
+          startDelay={2000}
+          onTypingDone={this.onHeaderTyped}
+        >
+          <p>React Typist</p>
+        </Typist>
+      </div>
+*/
+
 function App() {
   const props = useSpring({opacity: 1, from: {opacity: 0}})
   //const props2 = useSpring({ value: 100, from: { value: 0 } })
@@ -83,9 +96,21 @@ function App() {
             <Button href=""> About </Button>
             <Button href=""> Contact </Button>
           </Container>
-          <Typist avgTypingDelay="45">
-              <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> Welcome :) </p>
-          </Typist>
+          <div className="TypistExample">
+            <div className="TypistExample-header">
+              <Typist className="TypistExample-header"
+                      avgTypingDelay={40}
+                      startDelay={2000}
+                      onTypingDone={this.onHeaderTyped} 
+              >
+                  <p style={{color: theme.main, font:'Lucida Console', width:'3px'}}> 
+                    Welcome :)
+                  </p>
+                  <span class="Cursor Cursor--blinking">|</span>
+              </Typist>
+              <span class="Cursor Cursor--blinking">|</span>
+            </div>
+          </div>
         </ThemeProvider>
       </animated.div>
     </div>
