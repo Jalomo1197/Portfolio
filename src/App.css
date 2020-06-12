@@ -5,8 +5,11 @@
   font-family: monospace;
   font-size: 18px;
   line-height: 1.7;
-  background-color: #000015;
+  height: max-content;
+  background-image: linear-gradient(to top left, rgb(0, 0, 21), rgb(11, 11, 41));
   padding: 25px 50px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 .App-logo {
@@ -33,7 +36,7 @@
 
 
 .App-link {
-  color: #61dafb;
+  color: #5324a0;
 }
 
 @keyframes App-logo-spin {
@@ -44,3 +47,5 @@
     transform: rotate(360deg);
   }
 }
+
+
