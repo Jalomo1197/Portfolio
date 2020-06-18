@@ -4,10 +4,11 @@ import resume from './Jalomo_Resume.pdf'
 import initals from './Icons/AJ.png'
 import './styles.css'
 import {useSpring, animated} from  'react-spring'
+import { Link, animateScroll as scroll } from "react-scroll"
+
+//(312) 996-3126 call
 
 const NavBar = styled.div`
-   
-    text-center: center;
     padding:30px; 
     background: linear-gradient(to bottom, rgb(11, 11, 41), rgba(11, 11, 41,.0));
     position: fixed;
@@ -18,17 +19,20 @@ const NavBar = styled.div`
 `
 
 const Buttons = styled.div`
-    text-align:right;
+    text-align: right;
     display: inline-block;
-    width: $(props => props.windowW);
+    width: 90%;
+    height: 100%;
+    float: right;
 `
 
 
 
 const Initals = styled.div`
     text-align: left;
+    float: left;
     display: inline-block;
-    width: $(props => props.windowW);
+    width: 10%;
 `
 Initals.defaultProps = {
     windowW: window.innerWidth/2 
@@ -47,16 +51,21 @@ const Button = styled.button`
     cursor: pointer;
     filter: brightness(120%);
     transition: 0.5s all ease-out;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+
 
     /* Color the border and text with theme.main */
-    color: ${props => props.theme.main};
-    border: 2px solid ${props => props.theme.main};
+    color: ${props => props.theme.main+ "1)"};
+    border: 2px solid ${props => props.theme.main+ "1)"};
 
     /* On hover */
     &:hover {
         background: solid;
-        background-color: ${props => props.theme.main};
-        border: 3px solid ${props => props.theme.main};
+        background-color: ${props => props.theme.main+ "1)"};
+        border: 3px solid ${props => props.theme.main+ "1)"};
         color: white;
         box-shadow: 0 12px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
     }
@@ -81,12 +90,12 @@ function NavigationBar(props){
                         <img src={initals} alt="initals" width="70" height="70"/>
                     </Initals>
                     <Buttons>
-                        <a className="nav-item" href="#About">
-                        <Button> About </Button>
-                        </a>
-                        <a className="nav-item" href="#Projects">
-                        <Button> Projects </Button>
-                        </a>
+                        <Link activeClass="active" to="About" spy={true} smooth={true} offset={-70} duration={500}>
+                            <Button> About </Button>
+                        </Link>
+                        <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-70} duration={500}>
+                            <Button> Projects </Button>
+                        </Link>
                         <a href={resume} target='_blank' rel='nofollow noopener noreferrer' >
                         <Button> Resume </Button>
                         </a>

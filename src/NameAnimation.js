@@ -33,7 +33,7 @@ function NameAnimation(props) {
           </animated.div>
         ))}
         <Typist avgTypingDelay={40} startDelay={3000} >
-            <h1 style={{color: theme, fontWeight:500 , display:'inline', textShadow: '0px 1px 3px whitesmoke'}}> 
+            <h1 style={{color: theme+ '1)', fontWeight:500 , display:'inline', textShadow: '0px 1px 3px '+ theme + '1)' }}> 
                 Welcome to my portfolio
             </h1> 
         </Typist>
@@ -41,6 +41,5 @@ function NameAnimation(props) {
     </div>
   )
 }
-//fontFamily:'"Courier New", Courier, monospace'
 
 export default NameAnimation;

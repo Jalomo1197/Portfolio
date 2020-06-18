@@ -23,13 +23,18 @@ const Icon = styled.div`
   margin-right: 2ch;
   background: transparent;
   border-radius: ${props => props.radius};
-  filter: drop-shadow(6px 6px 3px rgba(192,192,192, 0.5));
+  filter: drop-shadow(5px 5px 3px rgba(192,192,192, 0.5));
   background-size: cover;
   background-position: center center;
   background-image: url(${props => props.icon});
   transition: box-shadow 0.5s;
   will-change: transform;
   cursor: pointer;
+
+  &:hover {
+    filter: drop-shadow(4px 4px 3px ${props => props.theme + "0.6)"});
+  }
+
 `
 // ^ scrap idea of glow? box-shadow: 0 12px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
 
@@ -45,8 +50,9 @@ const iconNormal = [0, 0, 1]
 
 
 
-function SocialMedia(){
+function SocialMedia(props){
     const Fade = useSpring({ friction: 100, tension: 5, delay: 1800, opacity: 1, from: {opacity: 0}});
+    const Theme = props.themeColor; 
 
     // Different Springs for each icon, in order to separate
     const [git_Spring, set1] = useSpring(() => ({ xys: iconNormal, config: iconAnimationConfig }))
@@ -59,19 +65,19 @@ function SocialMedia(){
     <animated.div style={Fade}>
         <IconsContainer>
             <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set1({ xys: GeneralCal(x, y, 4.5) })}
+                onMouseMove={({ clientX: x, clientY: y }) => set1({ xys: GeneralCal(x, y, 5.5) })}
                 onMouseLeave={() => set1({ xys: iconNormal })}
                 style={{ transform: git_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
-                <Icon radius='100px' icon={github} />
+                <a href="https://github.com/Jalomo1197" target='_blank' rel='nofollow noopener noreferrer' ><Icon theme={Theme} radius='100px' icon={github}/></a>
             </animated.div>
 
             <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set2({ xys: GeneralCal(x, y, 4.2) })}
+                onMouseMove={({ clientX: x, clientY: y }) => set2({ xys: GeneralCal(x, y, 4.9) })}
                 onMouseLeave={() => set2({ xys: iconNormal })}
                 style={{ transform: link_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
-                <Icon radius='100px' icon={linkin} />
+                <a href="https://www.linkedin.com/in/alexisjalomo/" target='_blank' rel='nofollow noopener noreferrer'><Icon theme={Theme} radius='100px' icon={linkin} /></a>
             </animated.div>
 
             <animated.div
@@ -79,7 +85,7 @@ function SocialMedia(){
                 onMouseLeave={() => set3({ xys: iconNormal })}
                 style={{ transform: insta_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
-                <Icon radius='100px' icon={instagram} />
+                <a href="https://www.instagram.com/jalomo_1197/?hl=en" target='_blank' rel='nofollow noopener noreferrer'><Icon theme={Theme} radius='100px' icon={instagram} /></a>
             </animated.div>
 
             <animated.div
@@ -87,7 +93,7 @@ function SocialMedia(){
                 onMouseLeave={() => set4({ xys: iconNormal })}
                 style={{ transform: face_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
-                <Icon radius='100px' icon={facebook} />
+                <a href="https://www.facebook.com/alex.jalomo" target='_blank' rel='nofollow noopener noreferrer'><Icon theme={Theme} radius='100px' icon={facebook} /></a>
             </animated.div>
 
             <animated.div
@@ -95,7 +101,7 @@ function SocialMedia(){
                 onMouseLeave={() => set5({ xys: iconNormal })}
                 style={{ transform: twitter_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
-                <Icon radius='100px' icon={twitter} />
+                <a href="https://twitter.com/JalomoLeonardo" target='_blank' rel='nofollow noopener noreferrer'><Icon theme={Theme} radius='100px' icon={twitter} /></a>
             </animated.div>
         </IconsContainer>
     </animated.div>

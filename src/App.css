@@ -37,6 +37,8 @@
 
 .App-link {
   color: #5324a0;
+  background-image: url("./Icons/AJ.png");
+  background-size: cover;
 }
 
 @keyframes App-logo-spin {
