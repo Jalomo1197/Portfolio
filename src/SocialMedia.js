@@ -23,19 +23,20 @@ const Icon = styled.div`
   margin-right: 2ch;
   background: transparent;
   border-radius: ${props => props.radius};
-  filter: drop-shadow(5px 5px 3px rgba(192,192,192, 0.5));
+  filter: drop-shadow(2px 2px 5px rgba(192,192,192, 0.5));
   background-size: cover;
   background-position: center center;
   background-image: url(${props => props.icon});
-  transition: box-shadow 0.5s;
+  transition: box-shadow 1s;
   will-change: transform;
   cursor: pointer;
 
   &:hover {
-    filter: drop-shadow(4px 4px 3px ${props => props.theme + "0.6)"});
+    filter: drop-shadow(2px 2px 12px ${props => props.theme + "0.7)"});
   }
 
 `
+
 // ^ scrap idea of glow? box-shadow: 0 12px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
 
 
