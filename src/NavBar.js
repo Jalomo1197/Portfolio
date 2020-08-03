@@ -7,10 +7,10 @@ import {useSpring, animated} from  'react-spring'
 import { Link, animateScroll as scroll } from "react-scroll"
 
 //(312) 996-3126 call
-
+// orgin back linear-gradient(to top left, rgb(0, 0, 21), rgb(11, 11, 41));
 const NavBar = styled.div`
     padding:30px; 
-    background: linear-gradient(to bottom, rgb(11, 11, 41), rgba(11, 11, 41,.0));
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(11, 11, 41,.0));
     position: fixed;
     top: 0;
     right: 0;
@@ -43,7 +43,7 @@ Buttons.defaultProps = {
 }
 
 const Button = styled.button`
-    background: transparent;
+   
     border-radius: 3px;
     margin: 0 1em;
     font-size: 18px;
@@ -55,20 +55,38 @@ const Button = styled.button`
     transition-duration: 0.2s;
     transition-timing-function: ease;
     transition-delay: 0s;
+    font-weight: 900;
 
 
     /* Color the border and text with theme.main */
-    color: ${props => props.theme.main+ "1)"};
-    border: 2px solid ${props => props.theme.main+ "1)"};
+    /* color: ${props => props.theme.main+ "1)"};
+        border: 2px solid ${props => props.theme.main+ "1)"};
+        color: linear-gradient(to bottom right, rgb(8, 123, 255), rgb(241, 117, 255));
+        background: transparent;
+        border: 2px solid linear-gradient(to bottom right, rgb(8, 123, 255), rgb(241, 117, 255));
+    */
+    
+    border: 0px;
+    background: -webkit-linear-gradient(rgb(8, 123, 255), rgb(241, 117, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 
     /* On hover */
     &:hover {
-        background: solid;
+        background: linear-gradient(to bottom right, rgb(8, 123, 255), rgb(241, 117, 255));
+        /*
         background-color: ${props => props.theme.main+ "1)"};
         border: 3px solid ${props => props.theme.main+ "1)"};
-        color: white;
-        box-shadow: 0 12px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
+        */
+       -webkit-text-fill-color: black;
+        color: black;
+        box-shadow: 0 0px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
     }
+
+    &:focus {
+        outline:0;
+    } 
 `
 
 // We are passing a default theme for Buttons that arent wrapped in the ThemeProvider

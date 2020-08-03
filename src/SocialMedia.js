@@ -32,7 +32,7 @@ const Icon = styled.div`
   cursor: pointer;
 
   &:hover {
-    filter: drop-shadow(2px 2px 12px ${props => props.theme + "0.7)"});
+    filter: drop-shadow(2px 2px 12px rgba(192,192,192, 0.5));
   }
 
 `
@@ -90,15 +90,7 @@ function SocialMedia(props){
             </animated.div>
 
             <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set4({ xys: GeneralCal(x, y, 3) })}
-                onMouseLeave={() => set4({ xys: iconNormal })}
-                style={{ transform: face_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
-                >
-                <a href="https://www.facebook.com/alex.jalomo" target='_blank' rel='nofollow noopener noreferrer'><Icon theme={Theme} radius='100px' icon={facebook} /></a>
-            </animated.div>
-
-            <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set5({ xys: GeneralCal(x, y, 2.3) })}
+                onMouseMove={({ clientX: x, clientY: y }) => set5({ xys: GeneralCal(x, y, 3) })}
                 onMouseLeave={() => set5({ xys: iconNormal })}
                 style={{ transform: twitter_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
