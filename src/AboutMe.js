@@ -122,28 +122,27 @@ const HyperLink = styled.a`
   }
 `
 
-const unorderedList = styled.ul`
+const Ul = styled.ul`
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
+    grid-template-columns: repeat(2,minmax(140px,200px));
     overflow: hidden;
-    padding: 0px;
-    margin: 20px 0px 0px;
-    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
     color: white;
 `
 
-const listItem = styled.li`
-    display: list-item;
-    color: white;
+const Li = styled.li`
     position: relative;
     margin-bottom: 10px;
     padding-left: 20px;
-    font-family: Arial;
+    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono","Lucida Console",Monaco,monospace;
     font-size: 13px;
-    color: rgb(136, 146, 176);  
+    color: white;
+    z-index: 1;
 
     &::before{
-        content: "▹";
+        z-index: 1;
+        content: url(${props => props.icon});
         position: absolute;
         left: 0px;
         color: rgb(100, 255, 218);
@@ -158,8 +157,8 @@ function AboutMe(props) {
     return (
         <div id="About" style={{marginTop: 150, marginBottom: 100,textAlign: 'center'}}>
             <div style={{display:'flex', justifyContent:'space-around', width:'100%'}}>
-            <Header fromColor="blue" toColor="purple">ABOUT ME</Header>
-            <GlowBar fromColor="blue" toColor="purple"/>
+                <Header fromColor="blue" toColor="purple">ABOUT ME</Header>
+                <GlowBar fromColor="blue" toColor="purple"/>
             </div>
             
             <div style={{width: '90%', textAlign:'left', paddingLeft: '5%', paddingRight: '5%'}}>
@@ -178,24 +177,21 @@ function AboutMe(props) {
                 <div style={{width: '35%', position: 'relative', display: 'block', textAlign: 'left'}}>
                     <Tabs>
                         <div style={{color: 'white'}} label="Languages & Tools">
-                            <unorderedList>
-                                <listItem>Java </listItem>
-                                <listItem>Scala </listItem>
-                                <listItem>C++ </listItem>
-                                <listItem>C </listItem>
-                                <listItem>F# </listItem>
-                                <listItem>JavaScript </listItem>
-                                <listItem>SQL </listItem>
-                                <listItem>MySQL </listItem>
-                                <listItem>GraphQL </listItem>
-                                <listItem>Git </listItem>
-                                <listItem>Maven </listItem>
-                                <listItem>Gradle </listItem>
-                                <listItem>JUnit </listItem>
-                                <listItem>NodeJS </listItem>
-                                <listItem>ReactJS </listItem>
-                                
-                            </unorderedList>
+                            
+                            <Ul>
+                                <Li icon='./Icons/Java.png'>Java </Li>
+                                <Li icon='./Icons/Scala.png'>Scala </Li>
+                                <Li icon='./Icons/Cpp.png'>C++ </Li>
+                                <Li icon='./Icons/C.png'>C </Li>
+                                <Li icon='./Icons/JS.png'>JavaScript </Li>
+                                <Li icon='./Icons/SQL.png'>SQL </Li>
+                                <Li icon='./Icons/MySQL.png'>MySQL </Li>
+                                <Li icon='./Icons/GraphQL.png'>GraphQL </Li>
+                                <Li icon='./Icons/Git.png'>Git </Li>
+                                <Li icon='./Icons/Node.png'>NodeJS </Li>
+                                <Li icon='./Icons/React.png'>ReactJS </Li>
+                            </Ul>
+                         
                         </div>
                         <div style={{color: 'white'}} label="Interests">
                             <Text>
