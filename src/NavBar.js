@@ -9,9 +9,11 @@ import { Link, animateScroll as scroll } from "react-scroll"
 //(312) 996-3126 call
 // orgin back linear-gradient(to top left, rgb(0, 0, 21), rgb(11, 11, 41));
 const NavBar = styled.div`
-    padding:30px; 
+    padding:10px; 
+    padding-top:24px; 
     background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(11, 11, 41,.0));
     position: fixed;
+    transition: top 0.5s;
     top: 0;
     right: 0;
     left: 0;
@@ -74,14 +76,13 @@ const Button = styled.button`
 
     /* On hover */
     &:hover {
-        background: linear-gradient(to bottom right, rgb(8, 123, 255), rgb(241, 117, 255));
+        background: transparent;
         /*
         background-color: ${props => props.theme.main+ "1)"};
         border: 3px solid ${props => props.theme.main+ "1)"};
         */
-       -webkit-text-fill-color: black;
-        color: black;
-        box-shadow: 0 0px 16px 0 rgba(192,192,192,0.3), 0 17px 50px 0 rgba(192,192,192,0.1);
+       -webkit-text-fill-color: white;
+        color: white;
     }
 
     &:focus {
@@ -95,15 +96,26 @@ Button.defaultProps = {
         main: "white"
     }
 }
-
-
+/*
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+*/
 function NavigationBar(props){
     const Fade = useSpring({ friction: 100, tension: 5, delay: 1800, opacity: 1, from: {opacity: 0}});
     
     return (
         <animated.div style={Fade}>
-            <ThemeProvider theme={{main: props.themeColor}}>
-                <NavBar>
+            
+                <NavBar id='navbar'>
+                    <div style={{display: 'flex', flexFlow:'row nowrap', alignItems: 'center', justifyContent: 'space-between'}}>
                     <Initals>
                         <img src={initals} alt="initals" width="70" height="70"/>
                     </Initals>
@@ -121,8 +133,9 @@ function NavigationBar(props){
                         <Button> Contact </Button>
                         </a>
                     </Buttons>
+                    </div>
                 </NavBar>
-            </ThemeProvider>
+            
         </animated.div>
     )
 

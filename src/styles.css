@@ -43,32 +43,45 @@
 
 .trails-main {
     position: relative;
-    width: 65%;
-    height: 100%;
-    margin-left: 50px;
-    margin-top: 99px;
-    margin-bottom: 33px;
-    overflow: hidden;
-    cursor: default;
     display: flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 99px;
+    cursor: default;
     justify-content: left;
     text-align: left;
+    padding-left: 20px;
   }
   
   .trails-text {
     font-family: Arial;
     position: relative;
     width: 100%;
-    height: 80px;
+    height: 8rem;
     line-height: 80px;
     color: white;
-    font-size: 5em;
+    font-size: 9rem;
     font-weight: 800;
     text-transform: uppercase;
     text-align: left;
     will-change: transform, opacity;
     overflow: hidden;
     text-shadow: 1px 1px 5px whitesmoke;
+    
+    
+  }
+
+  @media only screen and (max-width: 40em) { 
+    .trails-text {
+      font-size: 5rem;
+      height: fit-content;
+      line-height: 5rem;
+      text-align: left;
+    }
+    .trails-main {
+      padding-left: 0px;
+    }
+  
   }
   
   .trails-text > div {
@@ -79,19 +92,30 @@
   .tab-list {
     border-bottom: 1px solid #ccc;
     padding-left: 0;
+    text-align: center;
   }
   
   .tab-list-item {
+    font-size: 0.9em;
     color: white;
     display: inline-block;
     list-style: none;
     margin-bottom: -1px;
     padding: 0.5rem 0.75rem;
+    cursor: pointer;
   }
+
+
+  
   
   .tab-list-active {
     background-color: white;
     color: black;
     border: solid #ccc;
     border-width: 1px 1px 0 1px;
+  }
+
+  .tab-content{
+    height: 390;
+    width: 260;
   }

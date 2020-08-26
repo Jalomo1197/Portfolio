@@ -1,7 +1,9 @@
 import React from 'react';
 import Name from './NameAnimation'
 import SocialMedia from './SocialMedia'
+import ReactDOM from "react-dom";
 import NavBar from './NavBar.js'
+import NavBarTwo from './NavBarTwo.js'
 import AboutMe from './AboutMe.js'
 import Projects from './Projects.js'
 import {useSpring, animated} from 'react-spring'
@@ -62,17 +64,19 @@ function App() {
     main: themes[getRandomInt(themes.length)]
   }
 
+  //<NavBar themeColor={theme.main}/> 
+
   return (
-    <div className="App">
-        <Name themeColor={theme.main}/>
-        <NavBar themeColor={theme.main}/> 
-        <SocialMedia themeColor={theme.main} />
-        <animated.div style={props}>
-        <HomeGlow/>
-        <AboutMe/>    
-        <Projects/>
-        </animated.div> 
-    </div>
+      <div className="App">
+          <NavBarTwo/>
+          <Name themeColor={theme.main}/> 
+          <SocialMedia themeColor={theme.main} />
+          <animated.div style={props}>
+          <HomeGlow/>
+          <AboutMe/>    
+          <Projects/>
+          </animated.div> 
+      </div>
   );
 }
 

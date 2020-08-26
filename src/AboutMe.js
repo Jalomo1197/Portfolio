@@ -1,11 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import './styles.css';
-import Tabs from './Tabs';
-import { Button } from 'react-scroll';
+import './styles.css'
+import Tabs from './Tabs'
+
+import Java from './Icons/Java.png'
+import Scala from './Icons/Scala.png'
+import Cpp from './Icons/Cpp.png'
+import C from './Icons/C.png'
+import JS from './Icons/JS.png'
+import SQL from './Icons/SQL.png'
+import MySQL from './Icons/MySQL.png'
+import GraphQL from './Icons/GraphQL.png'
+import Git from './Icons/Git.png'
+import Node from './Icons/Node.png'
+import ReactImg from './Icons/React.png'
+
+
 
 //padding: 0.25em 1em;
 const Header = styled.h1`
+  min-width: ${props => props.minWidth};
+  min-height: 80px;
   display: inline-block;
   position: relative;
   font-family: Arial;
@@ -32,7 +47,8 @@ const GlowBar = styled.div`
   display: inline-block;
   position: relative;
   height: 10px;
-  width: 65%;
+  width: 66%;
+  min-width: 600px;
   margin: auto;
   box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3);
 
@@ -42,10 +58,10 @@ const GlowBar = styled.div`
     position: absolute;
     content: '';
     top: 0;
-    left: 9%;
+    left: 6%;
     right: 0;
     z-index: 0;
-    height: 100%;
+    height: 33%;
     width: 85%;
     margin: 0;
     filter: blur(0px);
@@ -79,7 +95,7 @@ GlowBar.defaultProps = {
 const Text = styled.p`
   line-height: 1.3; 
   font-family: Arial;
-  font-weight: 300;
+  font-weight: 100;
   z-index: 1;
   position: relative;
   box-sizing: inherit;
@@ -89,6 +105,7 @@ const Text = styled.p`
   margin: 0px;
   margin-top: 33px;
   line-height: 1.6;
+  text-align: left;
 `
 const HyperLink = styled.a`
   display: inline-block;
@@ -103,7 +120,6 @@ const HyperLink = styled.a`
   transition-duration: 0.25s;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0s;
-  margin-left: 5px;
   margin-right: 5px;
   &::after{
     content: "";
@@ -134,67 +150,134 @@ const Ul = styled.ul`
 const Li = styled.li`
     position: relative;
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 45px;
     font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono","Lucida Console",Monaco,monospace;
-    font-size: 13px;
+    font-size: 18px;
     color: white;
     z-index: 1;
-
+    list-style:none;
+  
+   
     &::before{
         z-index: 1;
-        content: url(${props => props.icon});
+        content: '';
+        background-image: url(${props => props.icon});
+        background-size: 30px 30px;
+        width: 30px; 
+        height: 30px;
         position: absolute;
         left: 0px;
         color: rgb(100, 255, 218);
         font-size: 14px;
         line-height: 12px;
+       
     }
+`
+
+
+
+const AboutSection = styled.div`
+  marginTop: 150;
+  marginBottom: 100;
+  textAlign: center;
+`
+
+const AboutText = styled.div`
+  width: 35%;
+  position: relative;
+  textAlign: left;
+
+
+  @media only screen and (max-width: 40em) { 
+    width: 100vw; 
+    textAlign: left;
+  }
+`
+
+const AboutLayout = styled.div`
+  width: 90%; 
+  textAlign: left; 
+  paddingLeft: 9%; 
+  paddingRight: 9%;
+  display: flex;
+  flexFlow: row wrap;
+  justify-content: space-around;
+
+
+  @media only screen and (max-width: 40em) { 
+    width: 100%;
+    paddingLeft: 0%; 
+    paddingRight: 0%;
+    textAlign: left; 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+`
+
+const TabsLayout = styled.div`
+  width: 35%; 
+  position: relative; 
+  text-align: left;
+  @media only screen and (max-width: 40em) { 
+    marginTop: 21px;
+    width: 100vw; 
+    position: relative; 
+    display: block;
+  }
 `
 
 //, Helvetica, sans-serif old tabs font
 
 function AboutMe(props) {
     return (
-        <div id="About" style={{marginTop: 150, marginBottom: 100,textAlign: 'center'}}>
-            <div style={{display:'flex', justifyContent:'space-around', width:'100%'}}>
-                <Header fromColor="blue" toColor="purple">ABOUT ME</Header>
+        <AboutSection id="About">
+            <div style={{display:'flex',flexFlow: 'row wrap',justifyContent:'space-around', width:'100%', height:'fit-content'}}>
+                <Header fromColor="blue" toColor="purple" minWidth='300px'>ABOUT ME</Header>
                 <GlowBar fromColor="blue" toColor="purple"/>
             </div>
             
-            <div style={{width: '90%', textAlign:'left', paddingLeft: '5%', paddingRight: '5%'}}>
-                <div style={{width: '35%', position: 'relative', display: 'inline-block', textAlign: 'left'}}>
-                <Text>
-                    Hi! I'm Alex, a final year software engineering student at the 
-                    <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer'>
-                    University of Illinios at Chicago.
+            <AboutLayout>
+                <AboutText>
+                  <Text>
+                    Hi! I am currently obtaining my bachelor's in computer science at the
+                    <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer' style={{marginLeft: '5px'}}>
+                    University of
                     </HyperLink>
-                    I am seeking an internship or fulltime position for Spring 2021. I love programming and 
-                    the culture that comes with it. I have built websites, IntelliJ plugins, relational databases, 
-                    frameworks, and games.
-                </Text> 
-                </div>
+                    <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer'>
+                    Illinios at
+                    </HyperLink>
+                    <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer'>
+                    Chicago.
+                    </HyperLink>
+                    
+                    I am actively seeking an internship/full-time position. I am prepared to collaborate, develop, and deliver. 
+                    I enjoy every aspect of computer science and the continuous learning. I've developed websites, plugins, relational databases, 
+                    frameworks, games, and errors.
+                  </Text> 
+                </AboutText>
 
-                <div style={{width: '35%', position: 'relative', display: 'block', textAlign: 'left'}}>
+                <TabsLayout>
                     <Tabs>
-                        <div style={{color: 'white'}} label="Languages & Tools">
+                        <div label="Languages & Tools">
                             
                             <Ul>
-                                <Li icon='./Icons/Java.png'>Java </Li>
-                                <Li icon='./Icons/Scala.png'>Scala </Li>
-                                <Li icon='./Icons/Cpp.png'>C++ </Li>
-                                <Li icon='./Icons/C.png'>C </Li>
-                                <Li icon='./Icons/JS.png'>JavaScript </Li>
-                                <Li icon='./Icons/SQL.png'>SQL </Li>
-                                <Li icon='./Icons/MySQL.png'>MySQL </Li>
-                                <Li icon='./Icons/GraphQL.png'>GraphQL </Li>
-                                <Li icon='./Icons/Git.png'>Git </Li>
-                                <Li icon='./Icons/Node.png'>NodeJS </Li>
-                                <Li icon='./Icons/React.png'>ReactJS </Li>
+                                <Li icon={Java}> Java </Li>
+                                <Li icon={Scala}>Scala </Li>
+                                <Li icon={Cpp}> C++ </Li>
+                                <Li icon={C}> C </Li>
+                                <Li icon={JS}> JavaScript </Li>
+                                <Li icon={SQL}> SQL </Li>
+                                <Li icon={MySQL}> MySQL </Li>
+                                <Li icon={GraphQL}> GraphQL </Li>
+                                <Li icon={Git}> Git </Li>
+                                <Li icon={Node}> NodeJS </Li>
+                                <Li icon={ReactImg}> ReactJS </Li>
                             </Ul>
                          
                         </div>
-                        <div style={{color: 'white'}} label="Interests">
-                            <Text>
+                        <div label="Interests">
+                            <Text style={{height: '260px', width:'100%'}}>
                             • I like building presonal project with friends.
                             <br></br>
                             • I like concurrent programming and algorithms.
@@ -203,8 +286,8 @@ function AboutMe(props) {
                             </Text>
                         </div>
                 
-                        <div style={{color: 'white'}} label="Hobbies">
-                            <Text>
+                        <div label="Hobbies">
+                            <Text style={{height: '260px', width:'100%'}}>
                             • I like contributing to project on github that seem interesting to me.
                             <br></br>
                             • I like taking and editing photos wit my Nikon DSL500.
@@ -213,9 +296,9 @@ function AboutMe(props) {
                             </Text>
                         </div>      
                     </Tabs>
-                </div>
-            </div>
-      </div>
+                </TabsLayout>
+            </AboutLayout>
+      </AboutSection>
     )
   }
    

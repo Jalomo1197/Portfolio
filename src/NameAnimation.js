@@ -21,6 +21,12 @@ const Span = styled.span`
    color: white;
    font-size: 2.4em;
    letter-spacing: 0.1em;
+   line-height:1.7em;
+   @media only screen and (max-width: 40em) { 
+    line-height:5.0em;
+    font-size: 1em;
+    text-align: center;
+   }
 `
 
 function NameAnimation(props) {
@@ -43,9 +49,13 @@ function NameAnimation(props) {
             key={items[index]}
             className="trails-text"
             style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`)}}>
-            <animated.div style={{ height }}>{items[index]}</animated.div>
+
+            <animated.div>{items[index]}</animated.div>
+
           </animated.div>
         ))}
+
+        {/* TODO: try giving a className from css file to Typist to prevent cursor height */}
         <Typist avgTypingDelay={40} startDelay={3000} cursor={Cursor} style={{marginTop: '0px'}}>
             
             <Span>Innovator</Span>

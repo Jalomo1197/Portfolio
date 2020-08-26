@@ -15,6 +15,10 @@ text-align: left;
 text-center: center;
 margin: 20px;
 position: relative;
+@media only screen and (max-width: 40em) { 
+    margin: 0px;
+    text-align: center;
+}
 `
 
 const Icon = styled.div`
@@ -30,6 +34,13 @@ const Icon = styled.div`
   transition: box-shadow 1s;
   will-change: transform;
   cursor: pointer;
+
+  @media only screen and (max-width: 40em) { 
+    width: 4.5ch;
+    height: 4.5ch;
+    margin: 0.8ch;
+    border-radius: 2ch;
+   }
 
   &:hover {
     filter: drop-shadow(2px 2px 12px rgba(192,192,192, 0.5));

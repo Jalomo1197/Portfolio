@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import './styles.css';
 
 const Header = styled.h1`
+  min-width: ${props => props.minWidth};
+  min-height: 80px;
   display: inline-block;
   position: relative;
   font-family: Arial;
@@ -42,7 +44,7 @@ const GlowBar = styled.div`
     left: 9%;
     right: 0;
     z-index: 0;
-    height: 100%;
+    height: 33%;
     width: 85%;
     margin: 0;
     filter: blur(0px);
@@ -121,8 +123,8 @@ const HyperLink = styled.a`
 function Projects(props) {
   return (
     <div id="Projects">
-      <div style={{display:'flex', justifyContent:'space-around', width:'100%'}}>
-        <Header>MY PROJECTS</Header>
+      <div style={{display:'flex',flexFlow: 'row wrap', justifyContent:'space-around', width:'100%'}}>
+        <Header minWidth='300px'>MY PROJECTS</Header>
         <GlowBar/>
       </div>
 
