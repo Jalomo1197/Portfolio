@@ -278,7 +278,7 @@ function AboutMe(props) {
                         </div>
                         <div label="Interests">
                             <Text style={{height: '260px', width:'100%'}}>
-                            • I like building presonal project with friends.
+                            • I like building presonal projects with friends.
                             <br></br>
                             • I like concurrent programming and algorithms.
                             <br></br>
@@ -288,7 +288,7 @@ function AboutMe(props) {
                 
                         <div label="Hobbies">
                             <Text style={{height: '260px', width:'100%'}}>
-                            • I like contributing to project on github that seem interesting to me.
+                            • I like contributing to projects on github that seem interesting to me.
                             <br></br>
                             • I like taking and editing photos wit my Nikon DSL500.
                             <br></br>
