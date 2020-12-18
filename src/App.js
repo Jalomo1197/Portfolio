@@ -23,6 +23,7 @@ const HomeGlow = styled.div`
   z-index: 0;
   color: white;
   background: black;
+  
 
   &:after{
     @keyframes animateGlow {
@@ -69,6 +70,7 @@ function App() {
   return (
       <div className="App">
           <NavBarTwo/>
+          
           <Name themeColor={theme.main}/> 
           <SocialMedia themeColor={theme.main} />
           <animated.div style={props}>

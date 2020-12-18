@@ -7,7 +7,7 @@ import './styles.css';
 
 const Header = styled.h1`
   min-width: ${props => props.minWidth};
-  min-height: 80px;
+  min-height: 40px;
   display: inline-block;
   position: relative;
   font-family: Arial;
@@ -22,6 +22,9 @@ const Header = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
+  @media only screen and (max-width: 40em) {
+    
+  }
 `
 const SubHeader = styled.h1`
   min-width: ${props => props.minWidth};
@@ -40,6 +43,12 @@ const SubHeader = styled.h1`
   background: -webkit-linear-gradient(90deg, ${props => props.fromColor} , ${props => props.toColor} );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media only screen and (max-width: 40em) {
+    text-align: left;
+    font-size: 24px;
+    padding:0px;
+  }
 `
 
 Header.defaultProps = {
@@ -144,10 +153,20 @@ const HyperLink = styled.a`
 const ProjectDisplay = styled.div`
   display: table;
   table-layout: fixed;
-  margin: 42px;
-  marginBottom: 60px;
+  margin-bottom: 99px;
+  margin-left: auto;
+  margin-right: auto;
   width: 80%;
   max-width: 2000px;
+  @media only screen and (max-width: 40em) { 
+    display: block;
+    margin-bottom: 66px;
+    margin-top: 45px;
+    width: 90%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
 `
 const ProjectElement = styled.div`
   display: table-cell;
@@ -155,12 +174,16 @@ const ProjectElement = styled.div`
   
   margin: auto;
   width: 140px;
+  @media only screen and (max-width: 40em) {
+    display: block;
+    width: 100%;
+   }
 `
 
 
 const ProjectImage = styled.div`
   display: block;
-  width: 55ch;
+  width: 45ch;
   height: 27ch;
   margin-right: 2ch;
   background: transparent;
@@ -174,8 +197,8 @@ const ProjectImage = styled.div`
   cursor: pointer;
 
   @media only screen and (max-width: 40em) { 
-    width: 4.5ch;
-    height: 4.5ch;
+    width: 20ch;
+    height: 20ch;
     margin: 0.8ch;
     border-radius: 2ch;
    }
@@ -231,6 +254,7 @@ function Projects(props) {
           </ProjectInfo>
         </ProjectElement>
       </ProjectDisplay>
+
 
       <ProjectDisplay>
         <ProjectElement>

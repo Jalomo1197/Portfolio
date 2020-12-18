@@ -48,7 +48,7 @@ const GlowBar = styled.div`
   position: relative;
   height: 10px;
   width: 66%;
-  min-width: 600px;
+  
   margin: auto;
   box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3);
 
@@ -177,7 +177,7 @@ const Li = styled.li`
 
 
 const AboutSection = styled.div`
-  marginTop: 150;
+  marginTop: 350;
   marginBottom: 100;
   textAlign: center;
 `
@@ -232,7 +232,7 @@ const TabsLayout = styled.div`
 function AboutMe(props) {
     return (
         <AboutSection id="About">
-            <div style={{display:'flex',flexFlow: 'row wrap',justifyContent:'space-around', width:'100%', height:'fit-content'}}>
+            <div style={{marginTop: '222px', display:'flex',flexFlow: 'row wrap',justifyContent:'space-around', width:'100%', height:'fit-content'}}>
                 <Header fromColor="blue" toColor="purple" minWidth='300px'>ABOUT ME</Header>
                 <GlowBar fromColor="blue" toColor="purple"/>
             </div>
