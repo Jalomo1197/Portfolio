@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import {useSpring, animated} from  'react-spring'
 import { Link, animateScroll as scroll } from "react-scroll"
 import initals from './Icons/AJ.png';
-import resume from './Jalomo_Resume.pdf';
+import resume from './Jalomo_Resume_JS.pdf';
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
@@ -49,16 +49,16 @@ function Nav() {
 
                 <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
                 <Link activeClass="active" to="About" spy={true} smooth={true} offset={-70} duration={500}>
-                    <Navbar.Item color='purple'>About</Navbar.Item>
+                    <Navbar.Item color='pink'>About</Navbar.Item>
                 </Link>
                 <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-70} duration={500}>
-                    <Navbar.Item color='blue'>Projects</Navbar.Item>
+                    <Navbar.Item color='pink'>Projects</Navbar.Item>
                 </Link>
                 <a style={{textDecoration: 'none'}} href={resume} target='_blank' rel='nofollow noopener noreferrer'>
                     <Navbar.Item color='pink'>Resume</Navbar.Item>
                 </a>
                 <a style={{textDecoration: 'none'}} className="nav-item" href="mailto:alexisjalomo1197@gmail.com?subject=Top Secret Sauce&body=Cool website!" rel="nofollow noopener noreferrer">
-                    <Navbar.Item color='red'>Contact</Navbar.Item>
+                    <Navbar.Item color='pink'>Contact</Navbar.Item>
                 </a>
                 </Navbar.Items>
             </Navbar.Wrapper>
