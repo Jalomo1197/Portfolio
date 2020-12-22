@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import React from "react"
+import gitIcon from './ProjectsImages/github.png'
 
 const ProjectContent = styled.div`
     grid-column: ${props => props.colStart} / ${props => props.colEnd};
@@ -11,7 +13,7 @@ const ProjectContent = styled.div`
 `
 
 const ProjectTitle = styled.h3`
-    line-height: 1.1;
+    line-height: 1.5;
     font-weight: 900;
     z-index: 3;
     font-size: 27px;
@@ -44,6 +46,11 @@ const ProjectTechStack = styled.ul`
     padding: 0px;
     list-style: none;
     text-align: ${props => props.textAlign};
+
+    li {
+        margin: 0px 5px 5px 5px;
+        color: gray;
+    }
 `
 
 const ProjectLinks = styled.div`
@@ -91,9 +98,13 @@ const ProjectBox = styled.div`
     transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 `
 
-const techTool = styled.li`
-    margin: 0px 0px 5px 20px;
-    color: gray;
-`
+function githubRepo(props){
+    return (
+        <a href={props.repoLink} target='_blank' rel='nofollow noopener noreferrer'>
+            <img src={gitIcon} style={{width: "33px", height: "33px", marginLeft: "9px", marginRight: "9px"}}/>
+        </a>
+    )
+}
 
-export {ProjectBox, ProjectTitle, ProjectTechStack, ProjectLinks, ProjectImage, ProjectDescription, ProjectContent, techTool}
+
+export {ProjectBox, ProjectTitle, ProjectTechStack, ProjectLinks, ProjectImage, ProjectDescription, ProjectContent, githubRepo}

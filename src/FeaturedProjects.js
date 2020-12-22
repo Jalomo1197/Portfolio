@@ -3,10 +3,10 @@ import React from "react"
 import ProOneImage from './ProjectsImages/Project_1.png'
 import ProTwoImage from './ProjectsImages/Project_2.png'
 import ProThreeImage from './ProjectsImages/Project_3.jpg'
-import gitIcon from './ProjectsImages/github.png'
+
 // Styled components
 import {Header, GlowBar} from './StyledHeaders'
-import {ProjectBox, ProjectTitle, ProjectTechStack, ProjectLinks, ProjectImage, ProjectDescription, ProjectContent, techTool} from './StyledProjects'
+import {ProjectBox, ProjectTitle, ProjectTechStack, ProjectLinks, ProjectImage, ProjectDescription, ProjectContent, githubRepo} from './StyledProjects'
 
 
 function FeaturedProjects(props) {
@@ -23,17 +23,19 @@ function FeaturedProjects(props) {
             <ProjectBox>
                 <ProjectContent textAlign="right" colStart="5" colEnd="-1" >
                     <ProjectTitle fromColor="#ffffff" toColor="#e75480"> 
-                    GitHub GraphQL Client Framework
+                    GitHub GraphQL <br></br>Client Framework
                     </ProjectTitle>
                     <ProjectDescription BGcolor="rgba(231, 84, 128, 0.5)">
                         <p> A object-oriented pure functional design and implementation of a GraphQL client framework for GitHub. 
             The framework composes and executes external GraphQL commands from Scala client programs.</p>
                     </ProjectDescription>
                     <ProjectTechStack flexAlign="flex-end">
-                        <techTool> Java </techTool>
-                        <techTool> IntelliJ Platform </techTool>
+                        <li> Scala </li>
+                        <li> GitHub V4 API </li>
                     </ProjectTechStack>
-                    <ProjectLinks flexAlign="flex-end"> github </ProjectLinks>
+                    <ProjectLinks flexAlign="flex-end"> 
+                        {githubRepo({repoLink: "https://github.com/Jalomo1197/ClientGitHubGraphQL"})}
+                    </ProjectLinks>
                 </ProjectContent>
                 <ProjectImage colStart="1" colEnd="7">
                     <img src={ProOneImage}
@@ -52,10 +54,12 @@ function FeaturedProjects(props) {
                             bass vibration of songs.</p>
                     </ProjectDescription>
                     <ProjectTechStack flexAlign="flex-start">
-                        <techTool> C </techTool>
-                        <techTool> Arduino </techTool>
+                        <li> C </li>
+                        <li> Arduino </li>
                     </ProjectTechStack>
-                    <ProjectLinks flexAlign="flex-start"> github </ProjectLinks>
+                    <ProjectLinks flexAlign="flex-start"> 
+                        {githubRepo({repoLink: "https://github.com/Jalomo1197/LED_Flow"})}
+                    </ProjectLinks>
                 </ProjectContent>
                 <ProjectImage colStart="6" colEnd="-1">
                     <img src={ProTwoImage}
@@ -74,11 +78,11 @@ function FeaturedProjects(props) {
                             supported design patterns, which is inserted into the user’s project.</p>
                     </ProjectDescription>
                     <ProjectTechStack flexAlign="flex-end">
-                        <techTool> Java </techTool>
-                        <techTool> IntelliJ Platform </techTool>
+                        <li> Java </li>
+                        <li> IntelliJ Platform </li>
                     </ProjectTechStack>
                     <ProjectLinks flexAlign="flex-end"> 
-                          <a><img src={{gitIcon}} /></a>     
+                        {githubRepo({repoLink: "https://github.com/Jalomo1197/Design-Pattern-Code-Generator"})}
                     </ProjectLinks>
                 </ProjectContent>
                 <ProjectImage colStart="1" colEnd="7">
