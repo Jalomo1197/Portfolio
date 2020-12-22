@@ -40,7 +40,7 @@ function Nav() {
         <Styles.Wrapper>
             <CSSReset />
 
-            <Navbar.Wrapper id="navbar">
+            <Navbar.Wrapper id="navbar" style={{"background-image": "linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.6))"}}>
                 <Navbar.Logo icon={initals}></Navbar.Logo>
 
                 <HamburgerButton.Wrapper onClick={() => toggleDrawer(true)}>
@@ -48,7 +48,7 @@ function Nav() {
                 </HamburgerButton.Wrapper>
 
                 <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
-                <Link activeClass="active" to="About" spy={true} smooth={true} offset={-70} duration={500}>
+                <Link activeClass="active" to="About" spy={true} smooth={true} offset={-165} duration={500}>
                     <Navbar.Item color='pink'>About</Navbar.Item>
                 </Link>
                 <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-70} duration={500}>

@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import './styles.css'
+//import glowRJS from './styles.css'
 import Tabs from './Tabs'
+
+
+import Carousel from 'react-bootstrap/Carousel'
 
 import Java from './Icons/Java.png'
 import Scala from './Icons/Scala.png'
@@ -107,6 +111,31 @@ const Text = styled.p`
   line-height: 1.6;
   text-align: left;
 `
+
+const GlowText = styled.p`
+  font-size: 22px;
+  font-family: Arial;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 2s ease-in-out 1 alternate;
+  -moz-animation: glow 2s ease-in-out 1 alternate;
+  animation: glow 2s ease-in-out 1 alternate;
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 0px #fff, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6;
+    }
+    
+    50% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073;
+    }
+    
+    100% {
+      text-shadow: 0 0 0px #fff, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6, 0 0 0px #ff4da6;
+    }
+  }
+`
+
 const HyperLink = styled.a`
   display: inline-block;
   text-decoration-skip-ink: auto;
@@ -149,15 +178,142 @@ const Ul = styled.ul`
 
 const Li = styled.li`
     position: relative;
-    margin-bottom: 10px;
+    margin-top: 33px;
+    margin-bottom: 33px;
     padding-left: 45px;
     font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono","Lucida Console",Monaco,monospace;
-    font-size: 18px;
+    font-size: 22px;
     color: white;
     z-index: 1;
     list-style:none;
+
+    -webkit-animation: ${props => props.glowAnimation} 2s ease-in-out 1 alternate;
+    -moz-animation: ${props => props.glowAnimation} 2s ease-in-out 1 alternate;
+    animation: ${props => props.glowAnimation} 2s ease-in-out 1 alternate;
+
+
+    @keyframes "glowScala" {
+      0% {
+        text-shadow: 0 0 0px #ffb0e2;      
+      }
+      25% {
+        text-shadow: 3px 3px 6px #ffb0e2;
+      }     
+      75% {
+        text-shadow: 0 0 0px #ffb0e2;
+      }
+    }
   
-   
+    @keyframes "glowJava" {
+      0% {
+        text-shadow: 0 0 0px #f5edc4;      
+      }
+      25% {
+        text-shadow: 3px 3px 6px #f5edc4;
+      }     
+      75% {
+        text-shadow: 0 0 0px#f5edc4;
+      }
+    }
+  
+    @keyframes "glowCPP" {
+      10% {
+        text-shadow: 0 0 0px #add1ff;      
+      }
+      35% {
+        text-shadow: 3px 3px 6px #add1ff;
+      }     
+      85% {
+        text-shadow: 0 0 0px#add1ff;
+      }
+    }
+  
+  
+    @keyframes "glowC" {
+      10% {
+        text-shadow: 0 0 0px #8084ff;      
+      }
+      35% {
+        text-shadow: 3px 3px 6px #8084ff;
+      }     
+      85% {
+        text-shadow: 0 0 0px#8084ff;
+      }
+    }
+  
+    @keyframes "glowJS" {
+      20% {
+        text-shadow: 0 0 0px yellow;      
+      }
+      45% {
+        text-shadow: 3px 3px 6px yellow;
+      }     
+      95% {
+        text-shadow: 0 0 0px yellow;
+      }
+    }
+  
+  
+    @keyframes "glowSQLs" {
+      20% {
+        text-shadow: 0 0 0px #dbb5ff;      
+      }
+      45% {
+        text-shadow: 3px 3px 6px #dbb5ff;
+      }     
+      95% {
+        text-shadow: 0 0 0px #dbb5ff;
+      }
+    }
+  
+    @keyframes "glowGQL" {
+      0% {
+        text-shadow: 0 0 0px #ffa1fd;      
+      }
+      25% {
+        text-shadow: 3px 3px 6px #ffa1fd;
+      }     
+      75% {
+        text-shadow: 0 0 0px #ffa1fd;
+      }
+    }
+  
+    @keyframes "glowGIT" {
+      0% {
+        text-shadow: 0 0 0px #ffd699;      
+      }
+      25% {
+        text-shadow: 3px 3px 6px #ffd699;
+      }     
+      75% {
+        text-shadow: 0 0 0px #ffd699;
+      }
+    }
+  
+    @keyframes "glowNJS" {
+      10% {
+        text-shadow: 0 0 0px #96ff9c;      
+      }
+      35% {
+        text-shadow: 3px 3px 6px #96ff9c;
+      }     
+      85% {
+        text-shadow: 0 0 0px #96ff9c;
+      }
+    }
+  
+    @keyframes "glowRJS" {
+      10% {
+        text-shadow: 0 0 0px #ce96ff;      
+      }
+      35% {
+        text-shadow: 3px 3px 6px #ce96ff;
+      }     
+      85% {
+        text-shadow: 0 0 0px #ce96ff;
+      }
+    }
+
     &::before{
         z-index: 1;
         content: '';
@@ -170,7 +326,6 @@ const Li = styled.li`
         color: rgb(100, 255, 218);
         font-size: 14px;
         line-height: 12px;
-       
     }
 `
 
@@ -178,12 +333,12 @@ const Li = styled.li`
 
 const AboutSection = styled.div`
   marginTop: 350;
-  marginBottom: 100;
+  marginBottom: 350;
   textAlign: center;
 `
 
 const AboutText = styled.div`
-  width: 35%;
+  width: 42%;
   position: relative;
   textAlign: left;
 
@@ -196,6 +351,7 @@ const AboutText = styled.div`
 
 const AboutLayout = styled.div`
   width: 90%; 
+  margin-bottom: 200px;
   textAlign: left; 
   paddingLeft: 9%; 
   paddingRight: 9%;
@@ -216,7 +372,8 @@ const AboutLayout = styled.div`
 `
 
 const TabsLayout = styled.div`
-  width: 35%; 
+  max-width: 400px; 
+  height: 400px;
   position: relative; 
   text-align: left;
   @media only screen and (max-width: 40em) { 
@@ -233,25 +390,28 @@ function AboutMe(props) {
     return (
         <AboutSection id="About">
             <div style={{marginTop: '222px', display:'flex',flexFlow: 'row wrap',justifyContent:'space-around', width:'100%', height:'fit-content'}}>
-                <Header fromColor="blue" toColor="purple" minWidth='300px'>ABOUT ME</Header>
-                <GlowBar fromColor="blue" toColor="purple"/>
+                <Header fromColor="white" toColor="gray" minWidth='300px'>ABOUT ME</Header>
+                <GlowBar fromColor="gray" toColor="black"/>
             </div>
             
             <AboutLayout>
                 <AboutText>
                   <Text>
-                    Hi! I am currently obtaining my bachelor's in computer science at the
+                    Hi! I recently obtained my Computer Science Bachelors degree at the
                     <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer' style={{marginLeft: '5px'}}>
                     University of
                     </HyperLink>
                     <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer'>
-                    Illinios at
+                    Illinois  at
                     </HyperLink>
                     <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer'>
                     Chicago.
                     </HyperLink>
-                    
+                    <br></br>
+                    <br></br>
                     I am actively seeking an internship/full-time position. I am prepared to collaborate, develop, and deliver. 
+                    <br></br>
+                    <br></br>
                     I enjoy every aspect of computer science and the continuous learning. I've developed websites, plugins, relational databases, 
                     frameworks, games, and errors.
                   </Text> 
@@ -259,42 +419,29 @@ function AboutMe(props) {
 
                 <TabsLayout>
                     <Tabs>
-                        <div label="Languages & Tools">
+                        <div label="Languages">
                             
                             <Ul>
-                                <Li icon={Java}> Java </Li>
-                                <Li icon={Scala}>Scala </Li>
-                                <Li icon={Cpp}> C++ </Li>
-                                <Li icon={C}> C </Li>
-                                <Li icon={JS}> JavaScript </Li>
-                                <Li icon={SQL}> SQL </Li>
-                                <Li icon={MySQL}> MySQL </Li>
-                                <Li icon={GraphQL}> GraphQL </Li>
-                                <Li icon={Git}> Git </Li>
-                                <Li icon={Node}> NodeJS </Li>
-                                <Li icon={ReactImg}> ReactJS </Li>
+                                <Li icon={Java} glowAnimation="glowJava"> Java </Li>
+                                <Li icon={Scala} glowAnimation="glowScala">Scala </Li>
+                                <Li icon={Cpp} glowAnimation="glowCPP"> C++ </Li>
+                                <Li icon={C} glowAnimation="glowC"> C </Li>
+                                <Li icon={JS} glowAnimation="glowJS"> JavaScript </Li>
+                                <Li icon={SQL} glowAnimation="glowSQLs"> SQL </Li>
                             </Ul>
                          
                         </div>
-                        <div label="Interests">
-                            <Text style={{height: '260px', width:'100%'}}>
-                            • I like building presonal projects with friends.
-                            <br></br>
-                            • I like concurrent programming and algorithms.
-                            <br></br>
-                            • I like learning new and improved tools for development. 
-                            </Text>
+                        <div label="Softwares & Tools">
+                            
+                            <Ul>
+                                <Li icon={GraphQL} glowAnimation="glowGQL"> GraphQL </Li>
+                                <Li icon={Git} glowAnimation="glowGIT"> Git </Li>
+                                <Li icon={Node} glowAnimation="glowNJS"> NodeJS </Li>
+                                <Li icon={ReactImg} glowAnimation="glowRJS"> ReactJS </Li>
+                                <Li icon={MySQL} glowAnimation="glowSQLs"> MySQL </Li>
+                            </Ul>
+                         
                         </div>
-                
-                        <div label="Hobbies">
-                            <Text style={{height: '260px', width:'100%'}}>
-                            • I like contributing to projects on github that seem interesting to me.
-                            <br></br>
-                            • I like taking and editing photos wit my Nikon DSL500.
-                            <br></br>
-                            • I like biking around and visiting new locations.
-                            </Text>
-                        </div>      
                     </Tabs>
                 </TabsLayout>
             </AboutLayout>
@@ -304,3 +451,18 @@ function AboutMe(props) {
    
   export default AboutMe;
 
+/**
+ * <div label="Interests & Hobbies">
+                            <GlowText> 🎶 🎸 MUSIC 🎹 🎧 </GlowText>
+                            <Text style={{height: '260px', width:'100%'}}>
+                            Throughout the years, I learned to play the guitar, piano, and other instruments. Recently I am trying to learn the 
+                            <HyperLink href="https://www.ableton.com/en/" target='_blank' rel='nofollow noopener noreferrer'>Ableton</HyperLink> software to produce 
+                            and record songs. Plan to publish music on spotify in the following years #_DJ_ALEX_EDM
+                            <br></br>
+                            • I like taking and editing photos wit my Nikon DSL500.
+                            <br></br>
+                            • I like biking around and visiting new locations.
+                            </Text>
+                           
+                        </div>  
+ */

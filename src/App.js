@@ -12,6 +12,8 @@ import './App.css' //background-color: #000015;
 import './type.scss'
 import './styles.css'
 
+import FeaturedProjects from './FeaturedProjects.js'
+
 // Colors for text and theme
 const themes = ["rgba(0, 13, 255,","rgba(110, 53, 232,","rgba(211, 53, 232,","rgba(232, 53, 116,","rgba(0, 229, 255,","rgba(255, 255, 255,"]
 
@@ -76,10 +78,10 @@ function App() {
           <animated.div style={props}>
           <HomeGlow/>
           <AboutMe/>    
-          <Projects/>
+          <FeaturedProjects/>
           </animated.div> 
       </div>
   );
 }
-
+// <iframe src="https://open.spotify.com/embed/playlist/6fLrXQrZizNq1k78XsbcLR" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 export default App;
