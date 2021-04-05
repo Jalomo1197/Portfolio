@@ -52,7 +52,7 @@ const Icon = styled.div`
 
 
 //function to calculate appropiate Transformation location
-const GeneralCal = (x, y, xDevisor) => [-(y - window.innerHeight / 1.5) / 20, (x - window.innerWidth / xDevisor) / 20, 1.2] 
+const GeneralCal = (x, y, xDevisor, yDevisor) => [-(y - window.innerHeight / yDevisor) / 18, (x - window.innerWidth / xDevisor) / 18, 1.2] 
 // Transformation on icons
 const trans = (x, y, s) => `perspective(80px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 // Spring configuation of tranformation
@@ -77,7 +77,7 @@ function SocialMedia(props){
     <animated.div style={Fade}>
         <IconsContainer>
             <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set1({ xys: GeneralCal(x, y, 5.5) })}
+                onMouseMove={({ clientX: x, clientY: y }) => set1({ xys: GeneralCal(x, y, window.innerWidth / x ,window.innerHeight / y) })}
                 onMouseLeave={() => set1({ xys: iconNormal })}
                 style={{ transform: git_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
@@ -85,7 +85,7 @@ function SocialMedia(props){
             </animated.div>
 
             <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set2({ xys: GeneralCal(x, y, 4.9) })}
+                onMouseMove={({ clientX: x, clientY: y }) => set2({ xys: GeneralCal(x, y, window.innerWidth / x ,window.innerHeight / y) })}
                 onMouseLeave={() => set2({ xys: iconNormal })}
                 style={{ transform: link_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
@@ -93,7 +93,7 @@ function SocialMedia(props){
             </animated.div>
 
             <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set3({ xys: GeneralCal(x, y, 3.8) })}
+                onMouseMove={({ clientX: x, clientY: y }) => set3({ xys: GeneralCal(x, y, window.innerWidth / x ,window.innerHeight / y) })}
                 onMouseLeave={() => set3({ xys: iconNormal })}
                 style={{ transform: insta_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >
@@ -101,7 +101,7 @@ function SocialMedia(props){
             </animated.div>
 
             <animated.div
-                onMouseMove={({ clientX: x, clientY: y }) => set5({ xys: GeneralCal(x, y, 3) })}
+                onMouseMove={({ clientX: x, clientY: y }) => set5({ xys: GeneralCal(x , y , window.innerWidth / x ,window.innerHeight / y) })}
                 onMouseLeave={() => set5({ xys: iconNormal })}
                 style={{ transform: twitter_Spring.xys.interpolate(trans), width:'fit-content', display:'inline-block' }}
                 >

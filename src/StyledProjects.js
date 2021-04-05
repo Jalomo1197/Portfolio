@@ -10,6 +10,11 @@ const ProjectContent = styled.div`
     display: block;
     color: white;
     font-family: Arial;
+
+    @media only screen and (max-width: 40em) { 
+        grid-column: 1 / -1;
+        text-align: left;
+    }
 `
 
 const ProjectTitle = styled.h3`
@@ -21,6 +26,10 @@ const ProjectTitle = styled.h3`
     background: -webkit-linear-gradient(90deg, ${props => props.fromColor} , ${props => props.toColor} );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media only screen and (max-width: 40em) { 
+        margin-top: 54px;
+    }
 `
 
 const ProjectDescription = styled.div`
@@ -31,9 +40,18 @@ const ProjectDescription = styled.div`
     padding: 25px;
     border-radius: 6px;
     background-color: ${props => props.BGcolor};
-    color: var(--light-slate);
+    color: ${props => props.textColor};
     font-size: var(--fz-lg);
+
+    @media only screen and (max-width: 40em) { 
+        font-size: 15px;
+    }
 `
+
+ProjectDescription.defaultProps = {
+    BGcolor: "rgba(229, 228, 235, 0.84)",
+    textColor: "white"
+}
 
 const ProjectTechStack = styled.ul`
     -webkit-box-pack: end;
@@ -87,22 +105,31 @@ const ProjectBox = styled.div`
     grid-template-columns: repeat(12, 1fr);
     -webkit-box-align: center;
     align-items: center;
-
+    max-width: 1110px;
     visibility: visible;
     opacity: 1;
-    padding-left: 123px;
-    padding-right: 123px;
+    margin: auto;
     padding-top: 75px;
     padding-bottom: 75px;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
+    @media only screen and (max-width: 40em) { 
+        padding: 0px;
+        padding-top: 10px;
+        padding-bottom: 90px;
+    }
 `
+
+
 
 function githubRepo(props){
     return (
+        
         <a href={props.repoLink} target='_blank' rel='nofollow noopener noreferrer'>
             <img src={gitIcon} style={{width: "33px", height: "33px", marginLeft: "9px", marginRight: "9px"}}/>
         </a>
+        
     )
 }
 

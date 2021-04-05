@@ -127,10 +127,10 @@ function NavigationBar(props){
                             <Button> Projects </Button>
                         </Link>
                         <a href={resume} target='_blank' rel='nofollow noopener noreferrer' >
-                        <Button> Resume </Button>
+                            <Button> Resume </Button>
                         </a>
                         <a className="nav-item" href="mailto:alexisjalomo1197@gmail.com?subject=Top Secret Sauce&body=Cool website!" rel="nofollow noopener noreferrer">
-                        <Button> Contact </Button>
+                            <Button> Contact </Button>
                         </a>
                     </Buttons>
                     </div>

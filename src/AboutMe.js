@@ -385,7 +385,7 @@ const TabsLayout = styled.div`
 `
 
 //, Helvetica, sans-serif old tabs font
-
+// I am prepared to collaborate, develop, and deliver. 
 function AboutMe(props) {
     return (
         <AboutSection id="About">
@@ -397,7 +397,7 @@ function AboutMe(props) {
             <AboutLayout>
                 <AboutText>
                   <Text>
-                    Hi! I recently obtained my Computer Science Bachelors degree at the
+                    Hi! Glad you visited my website! My name is Alex, a software engineer based in Chicago, IL. I obtained my bachelors degree from the
                     <HyperLink href='https://cs.uic.edu/' target='_blank' rel='nofollow noopener noreferrer' style={{marginLeft: '5px'}}>
                     University of
                     </HyperLink>
@@ -409,11 +409,11 @@ function AboutMe(props) {
                     </HyperLink>
                     <br></br>
                     <br></br>
-                    I am actively seeking an internship/full-time position. I am prepared to collaborate, develop, and deliver. 
-                    <br></br>
-                    <br></br>
-                    I enjoy every aspect of computer science and the continuous learning. I've developed websites, plugins, relational databases, 
+                    I enjoy every aspect of computer science, along with the continuous learning. I've developed websites, plugins, relational databases, 
                     frameworks, games, and errors.
+                    <br></br>
+                    <br></br>
+                    I'm currently not looking for a new opportunities. However, feel free to reach out for any questions you may have. 
                   </Text> 
                 </AboutText>
 

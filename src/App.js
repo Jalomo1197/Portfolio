@@ -68,7 +68,17 @@ function App() {
   }
 
   //<NavBar themeColor={theme.main}/> 
+// bg colors
+/*
+#2b354d  
+#1d2c4f 
 
+
+
+DIF POSSIBLE WINNERS
+
+#051a33  RGB 5, 26, 51
+*/
   return (
       <div className="App">
           <NavBarTwo/>
